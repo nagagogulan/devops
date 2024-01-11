@@ -1,22 +1,12 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-require("dotenv").config()
+const port = 3000;
 
-app.get('/api/get',(req,res) => {
-    res.send({message:"hello back to nodejs"})
-})
-
-app.get('/api/get_user_details',(req,res) => {
-    res.send({
-        user:{
-            name:"satyam",
-            age:22,
-            contact:12254
-        },env:process.env.NAME
-    })
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 
-
-app.listen(process.env.PORT,() => {
-    console.log("listening to 8000");
-})
+// Change the following line
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on http://0.0.0.0:${port}/`);
+});
